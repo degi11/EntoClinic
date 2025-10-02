@@ -42,19 +42,21 @@ export default function ContactUs() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4 ">
             Зөвлөгөөний Хуваарь Гарга
           </h2>
           <p className="text-lg text-teal-100 max-w-2xl mx-auto">
             Мэргэшсэн эмчийн зөвлөгөө, нарийн оношилгооны шинжилгээг аваарай.
-            Манай мэргэжилтнүүд танд цогц тусламж үзүүлэхэд бэлэн байна..
+            Манай мэргэжилтнүүд танд цогц тусламж үзүүлэхэд бэлэн байна.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <div className="bg-white rounded-xl p-8 text-gray-900">
-              <h3 className="text-2xl font-semibold mb-6">Цагаа Захиалаарай</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-[#00AC94]">
+                Цагаа Захиалаарай
+              </h3>
               <div className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
                   <input

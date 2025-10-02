@@ -8,7 +8,7 @@ import { MENU_ITEMS } from "@/asscents/constans";
 export default function Navbar() {
   return (
     <div
-      className={`fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-3xl `}
+      className={`fixed w-full z-50 transition-all duration-300 bg-white/40 backdrop-blur-2xl `}
     >
       <div className="max-w-[1260px] mx-auto px-6">
         <div className="flex justify-between h-[90px] items-center py-3">

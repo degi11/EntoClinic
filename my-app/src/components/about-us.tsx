@@ -8,8 +8,8 @@ export const AboutUs = () => {
           "url('https://ento.mn/_next/image?url=%2Fimages%2Fbusiness%2Fclinic.jpg&w=1920&q=75')",
       }}
     >
-      <div className="md:bg-transparent gap-[30px] bg-opacity-50 w-full flex flex-col md:flex-row min-h-[400px] items-center justify-center border-[8px] md:border-[18px] border-solid border-white">
-        <div className="inset-0 bg-white/70 backdrop-blur-sm max-w-[1260px] mx-auto px-4 sm:px-6 py-6 rounded-3xl">
+      <div className="md:bg-transparent gap-[30px] bg-opacity-50 w-full flex flex-col md:flex-row min-h-[600px] md:min-h-[400px] items-center justify-center border-[8px] md:border-[18px] border-solid border-white">
+        <div className="inset-0 bg-white/70 backdrop-blur-sm max-w-[1260px] mx-auto px-1 md:px-4 sm:px-6 py-2 rounded-3xl">
           <div className="w-full flex justify-center">
             <h2 className="my-5 text-2xl sm:text-3xl md:text-[38px] font-bold text-[#00AC94] text-center">
               Энто Клиник ХХК

@@ -43,9 +43,9 @@ export default function Doctors() {
                   </div>
 
                   <div className="space-y-1">
-                    {el.expertise.map((skill, idx) => (
+                    {el.expertise.map((skill, i) => (
                       <span
-                        key={idx}
+                        key={i}
                         className="inline-block bg-teal-50 text-teal-700 text-xs px-2 py-1 rounded mr-1 mb-1"
                       >
                         {skill}

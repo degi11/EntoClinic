@@ -24,6 +24,8 @@ export default function ContactUs() {
     setLoading(true);
 
     try {
+      const formattedDate = date ? date.toISOString().slice(0, 10) : "";
+
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -32,7 +34,7 @@ export default function ContactUs() {
           name,
           phonenumber,
           description,
-          date,
+          formattedDate,
           time,
         }),
       });
@@ -64,7 +66,6 @@ export default function ContactUs() {
           <TitleCenter
             title={thirdItem.title}
             text={thirdItem.text}
-            
             classnameText="text-teal-100"
           />
         )}
@@ -141,7 +142,7 @@ export default function ContactUs() {
                     <Input
                       type="time"
                       id="time"
-                      step="1"
+                      step="60"
                       defaultValue="10:30"
                       className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
                       onChange={(e) => setTime(e.target.value)}

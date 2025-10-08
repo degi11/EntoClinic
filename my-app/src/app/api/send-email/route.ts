@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
-    const { lastName, name, phonenumber, description, date, time } =
+    const { lastName, name, phonenumber, description, formattedDate, time } =
       await req.json();
 
     const transporter = nodemailer.createTransport({
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
       from: process.env.A_TRANSMITTER_MAIL,
       to: process.env.B_MAIL,
       subject: `Шинжилгээ өгөх хүсэлт: ${name}`,
-      text: `Овог: ${lastName}\nНэр: ${name}\nУтас: ${phonenumber}\nӨдөр : ${date}\nЦаг : ${time}\nШинжилгээ болон багц: ${description}`,
+      text: `Овог: ${lastName}\nНэр: ${name}\nУтас: ${phonenumber}\nӨдөр : ${formattedDate}\nЦаг : ${time}\nШинжилгээ болон багц: ${description}`,
       replyTo: process.env.A_TRANSMITTER_MAIL,
     };
 

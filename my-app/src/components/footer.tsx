@@ -59,7 +59,7 @@ const Footer = () => {
         <div className="flex gap-1">
           <Copyright className="text-[#99a1af]" />
           <p className="text-lg font-bold text-[#99a1af]">
-            2025{" "}
+            2025
             <span className="text-[#99a1af]">
               ЭНТО Клиник. All rights reserved. | Privacy Policy | Terms of
               Service

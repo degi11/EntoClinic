@@ -1,14 +1,5 @@
+import { LinkListProps } from "@/types/experts";
 import Link from "next/link";
-
-interface LinkItem {
-  href: string;
-  title: string;
-}
-
-interface LinkListProps {
-  items: LinkItem[];
-  flexRow?: boolean;
-}
 
 export const LinkList = ({ items, flexRow = false }: LinkListProps) => (
   <div

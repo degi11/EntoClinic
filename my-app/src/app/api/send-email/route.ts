@@ -3,7 +3,8 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, phonenumber, description } = await req.json();
+    const { lastName, name, phonenumber, description, date, time } =
+      await req.json();
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -17,7 +18,7 @@ export async function POST(req: NextRequest) {
       from: process.env.A_TRANSMITTER_MAIL,
       to: process.env.B_MAIL,
       subject: `Шинжилгээ өгөх хүсэлт: ${name}`,
-      text: `Нэр: ${name}\nУтас: ${phonenumber}\nЦагзахиалах хүсэлт: ${description}`,
+      text: `Овог: ${lastName}\nНэр: ${name}\nУтас: ${phonenumber}\nӨдөр : ${date}\nЦаг : ${time}\nШинжилгээ болон багц: ${description}`,
       replyTo: process.env.A_TRANSMITTER_MAIL,
     };
 

@@ -1,11 +1,21 @@
 "use client";
-import { Clock, MapPin, Phone } from "lucide-react";
+import { ChevronDownIcon } from "lucide-react";
 import { useState } from "react";
+import { Button } from "./ui/button";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Calendar } from "./ui/calendar";
+import { Input } from "./ui/input";
+import { CONTACTUS_CARD, TITLE_CENTER_INFO } from "@/asscents/constans";
+import TitleCenter from "./title-center";
 
 export default function ContactUs() {
+  const [lastName, setLastName] = useState("");
   const [name, setName] = useState("");
   const [phonenumber, setPhonenumber] = useState("");
   const [description, setDescription] = useState("");
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState<Date | undefined>(undefined);
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -17,7 +27,14 @@ export default function ContactUs() {
       const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, phonenumber, description }),
+        body: JSON.stringify({
+          lastName,
+          name,
+          phonenumber,
+          description,
+          date,
+          time,
+        }),
       });
 
       const data = await res.json();
@@ -34,6 +51,8 @@ export default function ContactUs() {
     setLoading(false);
   };
 
+  const thirdItem = TITLE_CENTER_INFO[3];
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -41,15 +60,14 @@ export default function ContactUs() {
       className="py-20 bg-teal-600 text-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4 ">
-            Зөвлөгөөний Хуваарь Гарга
-          </h2>
-          <p className="text-lg text-teal-100 max-w-2xl mx-auto">
-            Мэргэшсэн эмчийн зөвлөгөө, нарийн оношилгооны шинжилгээг аваарай.
-            Манай мэргэжилтнүүд танд цогц тусламж үзүүлэхэд бэлэн байна.
-          </p>
-        </div>
+        {TITLE_CENTER_INFO && (
+          <TitleCenter
+            title={thirdItem.title}
+            text={thirdItem.text}
+            
+            classnameText="text-teal-100"
+          />
+        )}
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
@@ -62,6 +80,9 @@ export default function ContactUs() {
                   <input
                     type="text"
                     placeholder="Овог"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    required
                     className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
                   />
                   <input
@@ -86,6 +107,47 @@ export default function ContactUs() {
                   required
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
                 />
+                <div className="flex gap-4">
+                  <div className="flex flex-col gap-3">
+                    <Popover open={open} onOpenChange={setOpen}>
+                      <PopoverTrigger asChild>
+                        <Button
+                          variant="outline"
+                          id="date-picker"
+                          className="w-32 justify-between font-normal"
+                        >
+                          {date ? date.toLocaleDateString() : "Он, Сар, Өдөр"}
+
+                          <ChevronDownIcon />
+                        </Button>
+                      </PopoverTrigger>
+                      <PopoverContent
+                        className="w-auto overflow-hidden p-0"
+                        align="start"
+                      >
+                        <Calendar
+                          mode="single"
+                          selected={date}
+                          captionLayout="dropdown"
+                          onSelect={(date) => {
+                            setDate(date);
+                            setOpen(false);
+                          }}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <Input
+                      type="time"
+                      id="time"
+                      step="1"
+                      defaultValue="10:30"
+                      className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+                      onChange={(e) => setTime(e.target.value)}
+                    />
+                  </div>
+                </div>
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -110,30 +172,14 @@ export default function ContactUs() {
           </div>
 
           <div className="space-y-8">
-            <div className="bg-teal-700 p-6 rounded-xl">
-              <Phone className="w-8 h-8 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Утас</h3>
-              <p className="text-teal-100 mb-2">Main: (+976) 72009898</p>
-            </div>
-
-            <div className="bg-teal-700 p-6 rounded-xl">
-              <MapPin className="w-8 h-8 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">
-                Манай клиникийг зориорой
-              </h3>
-              <p className="text-teal-100">
-                БЗД 26-р хороо, Кристал таун хотхоны
-                <br />
-                баруун урд талд HCC төв 3-р давхарт
-              </p>
-            </div>
-
-            <div className="bg-teal-700 p-6 rounded-xl">
-              <Clock className="w-8 h-8 mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Цаг</h3>
-              <p className="text-teal-100 mb-1">Дав-Бям: 8:00 - 17:00</p>
-              <p className="text-teal-100 mb-1">Ням: Амарна:</p>
-            </div>
+            {CONTACTUS_CARD.map((el, index) => (
+              <div className="bg-teal-700 p-6 rounded-xl" key={index}>
+                <el.icon className="w-8 h-8 mb-4" />
+                <h3 className="text-xl font-semibold mb-2">{el.title}</h3>
+                <p className="text-teal-100 mb-1">{el.text1}</p>
+                <p className="text-teal-100 mb-1">{el.text2}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

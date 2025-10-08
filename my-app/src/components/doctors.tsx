@@ -1,20 +1,21 @@
-import { CONSULTATION_EXPERTS } from "@/asscents/constans";
+import { CONSULTATION_EXPERTS, TITLE_CENTER_INFO } from "@/asscents/constans";
 import { Award } from "lucide-react";
 import Image from "next/image";
+import TitleCenter from "./title-center";
 
 export default function Doctors() {
+  const thirdItem = TITLE_CENTER_INFO[2];
   return (
     <section id="doctors" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Манай Оношлогооны Мэргэжилтнүүдтэй Уулзана уу
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Оношлогооны анагаах ухаан, дэвшилтэт эмнэлгийн шинжилгээний тайлбар
-            бүхий арвин туршлагатай, зөвлөлийн гэрчилгээтэй мэргэжилтнүүд
-          </p>
-        </div>
+        {TITLE_CENTER_INFO && (
+          <TitleCenter
+            title={thirdItem.title}
+            text={thirdItem.text}
+            classnameTitle="text-gray-900"
+            classnameText="text-gray-600"
+          />
+        )}
         <div className="grid md:grid-cols-3 gap-8">
           {CONSULTATION_EXPERTS.map((el, index) => (
             <div

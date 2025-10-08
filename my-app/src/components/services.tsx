@@ -1,21 +1,21 @@
 "use client";
-import { DIAGNOSTIC_SERVICES } from "@/asscents/constans";
+import { DIAGNOSTIC_SERVICES, TITLE_CENTER_INFO } from "@/asscents/constans";
 import { CheckCircle } from "lucide-react";
+import TitleCenter from "./title-center";
 
 export default function Services() {
+  const secondItem = TITLE_CENTER_INFO[1];
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Оношлогооны Цогц Үйлчилгээ
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Нарийвчилсан оношилгоо, эмчилгээг төлөвлөхөд хамгийн сүүлийн үеийн
-            тоног төхөөрөмж, батлагдсан арга зүйг ашиглан эмнэлгийн дэвшилтэт
-            шинжилгээ, мэргэжилтнүүдийн зөвлөгөө.
-          </p>
-        </div>
+        {TITLE_CENTER_INFO && (
+          <TitleCenter
+            title={secondItem.title}
+            text={secondItem.text}
+            classnameTitle="text-gray-900"
+            classnameText="text-gray-600"
+          />
+        )}
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {DIAGNOSTIC_SERVICES.map((el, index) => (

@@ -15,6 +15,12 @@ export interface LinkListProps {
   flexRow?: boolean;
 }
 
+export interface ItemProps {
+  title: string;
+  text: string;
+  index: number;
+}
+
 export interface TitleCenterProps {
   title: string;
   text: string;

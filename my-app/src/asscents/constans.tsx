@@ -29,12 +29,12 @@ export const CONTACT_INFO = [
   {
     icon: Phone,
     title: "Утас: +72009898",
-    href: "tel:+72009898",
+    href: "tel:+97672009898",
   },
   {
     icon: Mail,
     title: "И-мэйл: info@entoclinic.mn",
-    href: "/contact-us",
+    href: "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqWgTlHqVBDCWTkVjsHlStTjldNjHWqXzLkpdlpfFfvFwwHhJsPSnKsGfhkldTsgcMKMqq",
   },
 ];
 

@@ -115,7 +115,7 @@ export default function ContactUs() {
                         <Button
                           variant="outline"
                           id="date-picker"
-                          className="w-32 justify-between font-normal"
+                          className="justify-between font-normal w-fit p-5"
                         >
                           {date ? date.toLocaleDateString() : "Он, Сар, Өдөр"}
 
@@ -134,6 +134,10 @@ export default function ContactUs() {
                             setDate(date);
                             setOpen(false);
                           }}
+                          disabled={(date) => {
+                            const day = date.getDay();
+                            return day === 0;
+                          }}
                         />
                       </PopoverContent>
                     </Popover>
@@ -143,8 +147,10 @@ export default function ContactUs() {
                       type="time"
                       id="time"
                       step="60"
+                      min="08:00"
+                      max="16:00"
                       defaultValue="10:30"
-                      className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+                      className="bg-background appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none p-5"
                       onChange={(e) => setTime(e.target.value)}
                     />
                   </div>

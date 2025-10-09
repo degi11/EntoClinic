@@ -4,6 +4,7 @@ import Image from "next/image";
 import logo from "../asscents/Logo.svg";
 import * as React from "react";
 import { MENU_ITEMS } from "@/asscents/constans";
+import { DropdownMenuRadioGroupDemo } from "./menu";
 
 export default function Navbar() {
   return (
@@ -36,6 +37,7 @@ text-[#52667A] text-[length:var(--caption-1-semi-bold-font-size)] tracking-[var(
               </li>
             ))}
           </ul>
+          <DropdownMenuRadioGroupDemo />
         </div>
       </div>
     </div>

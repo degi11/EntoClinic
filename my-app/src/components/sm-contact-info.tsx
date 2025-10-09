@@ -9,7 +9,7 @@ export default function SmContactInfo() {
             <Clock className="w-5 h-5 mr-2" />
             <span>Same-Day Results Available</span>
           </div>
-          <div className="flex ">
+          <div className="flex">
             <Phone className="w-5 h-5 mr-2" />
             <span>Call: (+976) 72009898</span>
           </div>

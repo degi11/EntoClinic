@@ -1,18 +1,22 @@
 export const MENU_ITEMS = [
   {
     title: "Бидний тухай",
+    value: "Бидний тухай",
     href: "#about-us",
   },
   {
     title: "Үзлэг, Эмчилгээ",
+    value: "Үзлэг, Эмчилгээ",
     href: "#services",
   },
   {
     title: "Эмч нар",
+    value: "Эмч нар",
     href: "#doctors",
   },
   {
     title: "Холбоо барих",
+    value: "Холбоо барих",
     href: "#contact-us",
   },
 ];
@@ -34,7 +38,7 @@ export const CONTACT_INFO = [
   {
     icon: Mail,
     title: "И-мэйл: info@entoclinic.mn",
-    href: "https://mail.google.com/mail/u/0/#inbox?compose=CllgCJqWgTlHqVBDCWTkVjsHlStTjldNjHWqXzLkpdlpfFfvFwwHhJsPSnKsGfhkldTsgcMKMqq",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=info@entoclinic.mn&su=Санал%20хүсэлт&body=Сайн%20байна%20уу,",
   },
 ];
 

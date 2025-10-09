@@ -32,14 +32,15 @@ export function DropdownMenuRadioGroupDemo() {
         <DropdownMenuRadioGroup value={position} onValueChange={setPosition} />
 
         {MENU_ITEMS.map((el, index) => (
-          <DropdownMenuRadioItem key={index} value={el.value}>
-            <Link
-              key={el.href}
-              className="font-semibold text-lg"
-              href={el.href}
-            >
-              {el.title}
-            </Link>
+          <DropdownMenuRadioItem
+            key={index}
+            value={el.value}
+            onSelect={() => {
+              window.location.hash = el.href;
+            }}
+            className="font-semibold text-lg cursor-pointer"
+          >
+            {el.title}
           </DropdownMenuRadioItem>
         ))}
       </DropdownMenuContent>

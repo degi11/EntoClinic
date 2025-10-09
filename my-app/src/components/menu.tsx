@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MENU_ITEMS } from "@/asscents/constans";
 import { MenuIcon } from "lucide-react";
+import Link from "next/link";
 
 export function DropdownMenuRadioGroupDemo() {
   const [position, setPosition] = React.useState("bottom");
@@ -30,15 +31,15 @@ export function DropdownMenuRadioGroupDemo() {
         <DropdownMenuSeparator />
         <DropdownMenuRadioGroup value={position} onValueChange={setPosition} />
 
-        {MENU_ITEMS.map((el, index) => (
-          <DropdownMenuRadioItem
-            key={index}
-            value={el.value}
-            onClick={() => window.location.assign(el.href)}
-            className="font-semibold text-lg"
-          >
-            {el.title}
-          </DropdownMenuRadioItem>
+        {MENU_ITEMS.map((el) => (
+          <Link key={el.href} href={el.href}>
+            <DropdownMenuRadioItem
+              className="font-semibold text-lg"
+              value={el.value}
+            >
+              {el.title}
+            </DropdownMenuRadioItem>
+          </Link>
         ))}
       </DropdownMenuContent>
     </DropdownMenu>

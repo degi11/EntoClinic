@@ -7,6 +7,7 @@ import { Calendar } from "./ui/calendar";
 import { Input } from "./ui/input";
 import { CONTACTUS_CARD, TITLE_CENTER_INFO } from "@/asscents/constans";
 import TitleCenter from "./title-center";
+import { toast } from "sonner";
 
 export default function ContactUs() {
   const [lastName, setLastName] = useState("");
@@ -17,7 +18,6 @@ export default function ContactUs() {
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,11 +43,11 @@ export default function ContactUs() {
       if (data.success) {
         window.location.reload();
       } else {
-        setError(data.error || "Server error");
+        toast.error(data.error || "Server error");
       }
     } catch (err: unknown) {
       console.error(err);
-      setError("Сервертэй холбогдох үед алдаа гарлаа!");
+      toast.error("Сервертэй холбогдох үед алдаа гарлаа!");
     }
 
     setLoading(false);
@@ -169,11 +169,6 @@ export default function ContactUs() {
                 >
                   {loading ? "Илгээж байна..." : "Цаг Захиалах"}
                 </button>
-                {error && (
-                  <div className="mt-4 p-2 bg-red-200 text-red-800 border border-red-400 rounded">
-                    {error}
-                  </div>
-                )}
               </div>
             </div>
           </div>

@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MENU_ITEMS } from "@/asscents/constans";
 import { MenuIcon } from "lucide-react";
-import Link from "next/link";
 
 export function DropdownMenuRadioGroupDemo() {
   const [position, setPosition] = React.useState("bottom");

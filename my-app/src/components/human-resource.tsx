@@ -2,26 +2,24 @@
 import { useState } from "react";
 import { TITLE_CENTER_INFO } from "@/asscents/constans";
 import TitleCenter from "@/components/title-center";
+import { toast } from "sonner";
 
 export default function HumanResource() {
   const [loading, setLoading] = useState(false);
   const [cvFile, setCvFile] = useState<File | null>(null);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setSuccess(false);
-    setError("");
 
     if (!cvFile) {
-      setError("CV файл оруулна уу!");
+      toast.error("CV файл оруулна уу!");
       setLoading(false);
       return;
     }
 
-    const formData = new FormData(e.target);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     formData.append("cv", cvFile);
 
     try {
@@ -33,12 +31,13 @@ export default function HumanResource() {
       const data = await res.json();
 
       if (data.success) {
-        setSuccess(true);
+        toast.success("Анкет амжилттай илгээгдлээ!");
       } else {
-        setError(data.error || "Алдаа гарлаа!");
+        toast.error(data.error || "Серверээс алдаа ирлээ!");
       }
-    } catch (err) {
-      setError("Сервертэй холбогдож чадсангүй!");
+    } catch (error) {
+      console.error("CV илгээх үед алдаа:", error);
+      toast.error("Сервертэй холбогдож чадсангүй!");
     } finally {
       setLoading(false);
     }
@@ -56,7 +55,7 @@ export default function HumanResource() {
         {TITLE_CENTER_INFO && (
           <TitleCenter
             title={fourthItem.title}
-            text=''
+            text=""
             classnameText="text-teal-100"
           />
         )}
@@ -112,11 +111,6 @@ export default function HumanResource() {
               >
                 {loading ? "Илгээж байна..." : "Өрөгдөл илгээх"}
               </button>
-              {error && (
-                <div className="mt-4 p-2 bg-red-200 text-red-800 border border-red-400 rounded">
-                  {error}
-                </div>
-              )}
             </div>
           </div>
         </div>

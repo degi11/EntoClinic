@@ -26,7 +26,7 @@ export const MENU_ITEMS = [
   },
 ];
 
-import { MapPin, Phone, Mail, Clock, Baby, House, Clock2, HeartPulse, Syringe, TestTube, Radiation, Droplet, Sparkles, Bone, Bug, BugOff, Pill, Vibrate, FlaskRound, FlaskConical, Worm } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Baby, House, Clock2, HeartPulse, TestTube, Radiation, Droplet, Sparkles, Bone, Bug, Pill, FlaskRound, FlaskConical, Worm } from "lucide-react";
 
 export const CONTACT_INFO = [
   {
@@ -85,7 +85,7 @@ export const TITLE_CENTER_INFO = [
   },
 ];
 
-import { Microscope, Activity, Brain, Eye, Search, Target,  } from "lucide-react";
+import { Microscope } from "lucide-react";
 
 export const DIAGNOSTIC_SERVICES = [
     {
@@ -219,7 +219,6 @@ import Doctor2 from "./Oyungerel.jpg";
 import Doctor3 from "./Tungalag.png";
 import Doctor4 from "./Amgalan.png";
 import Doctor5 from "./Sambuu.jpg";
-import Doctor6 from "./Dilina.png";
 
 export const CONSULTATION_EXPERTS: Expert[] = [
   {

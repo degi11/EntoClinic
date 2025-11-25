@@ -55,12 +55,10 @@ const Footer = () => {
 
       <div className="w-full h-px bg-gray-200"></div>
 
-        <div className="flex items-center text-sm w-full gap-1">
-          <Copyright className="text-[#99a1af]" />
-          <p className="text-lg font-bold text-[#99a1af]">
-            2025 ЭНТО Мэдик ХХК
-          </p>
-        </div>
+      <div className="flex items-center text-sm w-full gap-1">
+        <Copyright className="text-[#99a1af]" />
+        <p className="text-lg font-bold text-[#99a1af]">2025 ЭНТО Мэдик ХХК</p>
+      </div>
     </footer>
   );
 };

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Picture from "../asscents/Lab.jpg";
+import Picture from "../asscents/HeaderImage.jpg";
 import { Zap } from "lucide-react";
 import { RESULT_SM_INFO } from "@/asscents/constans";
 
@@ -17,12 +17,11 @@ export default function Main() {
         <div>
           <div className="flex flex-col text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
             <p>НАРИЙВЧИЛСАН</p>
-            <p className="text-teal-600">ОНОШЛИГОО</p>
+            <p className="text-teal-600">ОНОШИЛГОО</p>
             <p>МЭРГЭЖИЛТНҮҮДИЙН</p>
             <p>ЗӨВЛӨГӨӨ</p>
           </div>
           <div className="lg:text-sm text-gray-600 mb-8 leading-relaxed sm:text-sm">
-            
             <p className="font-semibold">Үнэт зүйл</p>
             Харилцан хүндлэлтэй хамтын ажиллагааг эрхэмлэн. <br />
             Үйлчлүүлэгч төвтэй, найзын дотно сэтгэлээр тусламж үйлчилгээг
@@ -41,7 +40,6 @@ export default function Main() {
           ))}
         </div>
       </div>
-
       <div className="w-full md:w-1/2">
         <Image
           src={Picture}

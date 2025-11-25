@@ -1,52 +1,47 @@
 "use client";
 import { useState } from "react";
-import {  TITLE_CENTER_INFO } from "@/asscents/constans";
+import { TITLE_CENTER_INFO } from "@/asscents/constans";
 import TitleCenter from "@/components/title-center";
 
-
 export default function HumanResource() {
-  const [lastName, setLastName] = useState("");
-  const [name, setName] = useState("");
-  const [phonenumber, setPhonenumber] = useState("");
-  const [description, setDescription] = useState("");
-  const [time, setTime] = useState("");
-  const [date, setDate] = useState<Date | undefined>(undefined);
-  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [cvFile, setCvFile] = useState<File | null>(null);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
+    setSuccess(false);
+    setError("");
+
+    if (!cvFile) {
+      setError("CV файл оруулна уу!");
+      setLoading(false);
+      return;
+    }
+
+    const formData = new FormData(e.target);
+    formData.append("cv", cvFile);
 
     try {
-      const formattedDate = date ? date.toISOString().slice(0, 10) : "";
-
-      const res = await fetch("/api/send-email", {
+      const res = await fetch("/api/human-resource", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          lastName,
-          name,
-          phonenumber,
-          description,
-          formattedDate,
-          time,
-        }),
+        body: formData,
       });
 
       const data = await res.json();
-      if (data.success) {
-        window.location.reload();
-      } else {
-        setError(data.error || "Server error");
-      }
-    } catch (err: unknown) {
-      console.error(err);
-      setError("Сервертэй холбогдох үед алдаа гарлаа!");
-    }
 
-    setLoading(false);
+      if (data.success) {
+        setSuccess(true);
+      } else {
+        setError(data.error || "Алдаа гарлаа!");
+      }
+    } catch (err) {
+      setError("Сервертэй холбогдож чадсангүй!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const fourthItem = TITLE_CENTER_INFO[4];
@@ -61,7 +56,7 @@ export default function HumanResource() {
         {TITLE_CENTER_INFO && (
           <TitleCenter
             title={fourthItem.title}
-            text={fourthItem.text}
+            text=''
             classnameText="text-teal-100"
           />
         )}
@@ -69,27 +64,16 @@ export default function HumanResource() {
         <div className="flex items-center justify-center w-full gap-8">
           <div className="bg-white rounded-xl p-8 text-gray-900">
             <h3 className="text-2xl font-semibold mb-6 text-[#00AC94]">
-              Цагаа Захиалаарай
+              Ажилд орох анкет илгээх
             </h3>
             <div className="space-y-4">
-              <div className="grid md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Овог"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                />
-                <input
-                  type="text"
-                  placeholder="Нэр"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
-                />
-              </div>
+              <input
+                type="text"
+                placeholder="Таны нэр"
+                required
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+              />
+
               <input
                 type="email"
                 placeholder="Email Хаяг"
@@ -98,24 +82,35 @@ export default function HumanResource() {
               <input
                 type="tel"
                 placeholder="Утасны дугаар"
-                value={phonenumber}
-                onChange={(e) => setPhonenumber(e.target.value)}
+                required
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
+              />
+              <input
+                type="text"
+                placeholder="Өргөдөл өгсөн албан тушаал"
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
               />
               <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                required
                 rows={4}
-                placeholder="Шинжилгээ өгөх Он, Сар, Өдөрөө тодорхой бичнэ үү"
+                placeholder="Хүсвэл тайлбар бичиж болно"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
               ></textarea>
+              <div className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent">
+                <label className="block font-medium mb-1">CV Файл</label>
+
+                <input
+                  type="file"
+                  accept=".pdf,.doc,.docx"
+                  onChange={(e) => setCvFile(e.target.files?.[0] || null)}
+                  className="block w-full"
+                />
+              </div>
               <button
                 disabled={loading}
                 className="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition-colors"
               >
-                {loading ? "Илгээж байна..." : "Цаг Захиалах"}
+                {loading ? "Илгээж байна..." : "Өрөгдөл илгээх"}
               </button>
               {error && (
                 <div className="mt-4 p-2 bg-red-200 text-red-800 border border-red-400 rounded">

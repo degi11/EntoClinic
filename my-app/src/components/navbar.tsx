@@ -29,7 +29,7 @@ export default function Navbar() {
                 <Link href={el.href}>
                   <p
                     className={`isolate inline-block items-center justify-center px-3 py-2 font-caption-1-semi-bold text-dark-tertiary 
-text-[#52667A] text-[length:var(--caption-1-semi-bold-font-size)] tracking-[var(--caption-1-semi-bold-letter-spacing)] leading-[var(--caption-1-semi-bold-line-height)] whitespace-nowrap [font-style:var(--caption-1-semi-bold-font-style)] hover:text-[#00AC94] hover:[text-shadow:0_0_24px_#00AC94]`}
+text-[#52667A] text-(length:--caption-1-semi-bold-font-size) tracking-(--caption-1-semi-bold-letter-spacing) leading-(--caption-1-semi-bold-line-height) whitespace-nowrap [font-style:var(--caption-1-semi-bold-font-style)] hover:text-[#00AC94] hover:[text-shadow:0_0_24px_#00AC94]`}
                   >
                     {el.title}
                   </p>

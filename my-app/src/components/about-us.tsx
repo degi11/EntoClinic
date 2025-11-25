@@ -5,7 +5,7 @@ export const AboutUs = () => {
   return (
     <section
       id="about-us"
-      className="w-full min-h-[400px] bg-cover bg-center bg-no-repeat bg-fixed"
+      className="w-full min-h-[400px] bg-cover bg-center bg-no-repeat bg-fixed mt-20"
       style={{
         backgroundImage:
           "url('https://ento.mn/_next/image?url=%2Fimages%2Fbusiness%2Fclinic.jpg&w=1920&q=75')",

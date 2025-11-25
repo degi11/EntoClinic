@@ -20,7 +20,7 @@ export default function Doctors() {
           {CONSULTATION_EXPERTS.map((el, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
+              className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
             >
               <div className="relative w-full h-90">
                 <Image

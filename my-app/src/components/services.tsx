@@ -7,7 +7,7 @@ export default function Services() {
   const secondItem = TITLE_CENTER_INFO[1];
   return (
     <section id="services" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-2">
+      <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-8">
         {TITLE_CENTER_INFO && (
           <TitleCenter
             title={secondItem.title}

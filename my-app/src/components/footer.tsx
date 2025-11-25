@@ -7,7 +7,7 @@ import { CONTACT_INFO, MENU_ITEMS } from "@/asscents/constans";
 
 const Footer = () => {
   return (
-    <footer className="max-w-[1216px] m-auto flex flex-col justify-center items-center py-10 gap-10 p-6 text-[#45556c]">
+    <footer className="max-w-7xl m-auto flex flex-col justify-center items-center py-10 gap-10 p-8 text-[#45556c]">
       <div className="w-full h-px bg-gray-200"></div>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
@@ -24,7 +24,7 @@ const Footer = () => {
           </div>
 
           <div className="text-[#45556c] text-sm flex flex-col gap-2">
-            <p> Хамгийн сүүлийн үеийн технологи,</p>
+            <p>Хамгийн сүүлийн үеийн технологи,</p>
             <p>батлагдсан аргачлалыг</p>
             <p>ашиглан дэвшилтэт оношилгоо,</p>
             <p>мэргэжлийн эмчийн зөвлөгөө.</p>
@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col gap-2 col-span-1 md:col-span-1 text-[#45556c]">
-          <div className="text-lg font-bold">Contact info</div>
+          <div className="text-lg font-bold">Холбоо барих</div>
           {CONTACT_INFO.map((el, index) => (
             <Link
               href={el.href}
@@ -55,18 +55,12 @@ const Footer = () => {
 
       <div className="w-full h-px bg-gray-200"></div>
 
-      <div className="flex justify-between gap-2 items-center text-sm w-full">
-        <div className="flex gap-1">
+        <div className="flex items-center text-sm w-full gap-1">
           <Copyright className="text-[#99a1af]" />
           <p className="text-lg font-bold text-[#99a1af]">
-            2025
-            <span className="text-[#99a1af]">
-              ЭНТО Клиник. All rights reserved. | Privacy Policy | Terms of
-              Service
-            </span>
+            2025 ЭНТО Мэдик ХХК
           </p>
         </div>
-      </div>
     </footer>
   );
 };

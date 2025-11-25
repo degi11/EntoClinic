@@ -15,12 +15,12 @@ export default function Main() {
           Оношлогооны дэвшилтэт технологи
         </div>
         <div>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            Нарийвчилсан
-            <span className="text-teal-600"> Оношлогоо</span>
-            <br />
-            Мэргэжилтнүүдийн Зөвлөгөө
-          </h1>
+          <div className="flex flex-col text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-6">
+            <p>НАРИЙВЧИЛСАН</p>
+            <p className="text-teal-600">ОНОШЛИГОО</p>
+            <p>МЭРГЭЖИЛТНҮҮДИЙН</p>
+            <p>ЗӨВЛӨГӨӨ</p>
+          </div>
           <div className="lg:text-sm text-gray-600 mb-8 leading-relaxed sm:text-sm">
             
             <p className="font-semibold">Үнэт зүйл</p>

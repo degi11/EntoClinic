@@ -32,17 +32,16 @@ export async function POST(req: NextRequest) {
 
     const mailOptions = {
       from: process.env.A_TRANSMITTER_MAIL,
-      to: process.env.B_MAIL,
+      to: process.env.C_MAIL,
       subject: `Ажлын анкет ирлээ: ${name}`,
       text: `
-                Нэр: ${name}
-                И-мэйл: ${email}
-                Утас: ${phone}
-                Өргөдөл өгсөн албан тушаал: ${position}
+Нэр: ${name}
+И-мэйл: ${email}
+Утас: ${phone}
+Өргөдөл өгсөн албан тушаал: ${position}
 
-                Нэмэлт мэдээлэл:
-                ${message}
-      `,
+Нэмэлт мэдээлэл: ${message}
+`,
       attachments: [
         {
           filename: cvFile.name,

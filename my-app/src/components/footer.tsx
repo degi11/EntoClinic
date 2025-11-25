@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../asscents/Logo.svg";
+import logo from "../asscents/ENTO КЛИНИК  logo.png";
 import { Copyright } from "lucide-react";
 import { LinkList } from "./link-list";
 import { CONTACT_INFO, MENU_ITEMS } from "@/asscents/constans";

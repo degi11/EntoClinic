@@ -22,21 +22,23 @@ export default function Doctors() {
               key={index}
               className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow"
             >
-              <Image
-                src={el.image}
-                alt={el.name}
-                width={600}
-                height={64}
-                className="object-cover"
-              />
-              <div className="p-6">
+              <div className="relative w-full h-90">
+                <Image
+                  src={el.image}
+                  alt={el.name}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="p-5">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {el.name}
                 </h3>
 
                 <p className="text-gray-600 text-sm mb-3">{el.credentials}</p>
 
-                <div className="mb-4">
+                <div className="mb-2">
                   <div className="flex items-center text-gray-500 text-sm mb-2">
                     <Award className="w-4 h-4 mr-1" />
                     {el.experience} жил

@@ -185,6 +185,7 @@ export default function ContactUs() {
                 <h3 className="text-xl font-semibold mb-2">{el.title}</h3>
                 <p className="text-teal-100 mb-1">{el.text1}</p>
                 <p className="text-teal-100 mb-1">{el.text2}</p>
+                <p className="text-teal-100 mb-1">{el.text3}</p>
               </div>
             ))}
           </div>

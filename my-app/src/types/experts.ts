@@ -1,7 +1,9 @@
+import { StaticImageData } from "next/image";
+
 export interface Expert {
   name: string;
   experience: string;
-  image: string;
+  image: StaticImageData;
   credentials: string;
   expertise: string[];
 }

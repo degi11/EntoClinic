@@ -3,7 +3,7 @@ import ContactUs from "@/components/contact-us";
 import Doctors from "@/components/doctors";
 import Main from "@/components/main";
 import Services from "@/components/services";
-import SmContactInfo from "@/components/sm-contact-info";
+import SmContactInfo from "@/components/sm-info";
 
 export default function Home() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../asscents/Logo.svg";
+import logo from "../asscents/ENTO КЛИНИК  logo.png";
 import * as React from "react";
 import { MENU_ITEMS } from "@/asscents/constans";
 import { DropdownMenuRadioGroupDemo } from "./menu";

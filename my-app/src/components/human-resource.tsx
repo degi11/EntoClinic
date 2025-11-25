@@ -67,6 +67,7 @@ export default function HumanResource() {
             </h3>
             <div className="space-y-4">
               <input
+              name="name"
                 type="text"
                 placeholder="Таны нэр"
                 required
@@ -74,23 +75,27 @@ export default function HumanResource() {
               />
 
               <input
+              name="email"
                 type="email"
                 placeholder="Email Хаяг"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
               />
               <input
+              name="phone"
                 type="tel"
                 placeholder="Утасны дугаар"
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
               />
               <input
+              name="position"
                 type="text"
                 placeholder="Өргөдөл өгсөн албан тушаал"
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"
               />
               <textarea
+              name="message"
                 rows={4}
                 placeholder="Хүсвэл тайлбар бичиж болно"
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-600 focus:border-transparent"

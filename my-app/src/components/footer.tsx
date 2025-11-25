@@ -8,7 +8,7 @@ import { CONTACT_INFO, MENU_ITEMS } from "@/asscents/constans";
 const Footer = () => {
   return (
     <footer className="max-w-[1216px] m-auto flex flex-col justify-center items-center py-10 gap-10 p-6 text-[#45556c]">
-      <div className="w-full h-[1px] bg-gray-200"></div>
+      <div className="w-full h-px bg-gray-200"></div>
       <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Link
           className="flex flex-col gap-2 w-fit col-span-1 md:col-span-1"
@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="w-full h-[1px] bg-gray-200"></div>
+      <div className="w-full h-px bg-gray-200"></div>
 
       <div className="flex justify-between gap-2 items-center text-sm w-full">
         <div className="flex gap-1">

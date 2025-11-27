@@ -9,7 +9,7 @@ export default function Main() {
       id="main"
       className="relative overflow-hidden max-w-[1260px] mx-auto px-6 py-20 mt-[90px] flex flex-col md:flex-row gap-5 bg-white"
     >
-      <div className="text-black w-full md:w-1/2 h-min-screen sm:px-6">
+      <div className="text-black w-full md:w-1/2 h-min-screen px-6 md:pr-4 lg:pr-6 lg:px-0">
         <div className="inline-flex items-center bg-teal-100 text-teal-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
           <Zap className="w-4 h-4 mr-2" />
           Оношлогооны дэвшилтэт технологи

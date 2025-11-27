@@ -21,7 +21,7 @@ export default function Main() {
             <p>МЭРГЭЖИЛТНҮҮДИЙН</p>
             <p>ЗӨВЛӨГӨӨ</p>
           </div>
-          <div className="lg:text-sm text-gray-600 mb-8 leading-relaxed sm:text-sm">
+          <div className=" text-gray-600 mb-8 leading-relaxed text-sm md:text-base lg:text-base">
             <p className="font-semibold">Үнэт зүйл</p>
             Харилцан хүндлэлтэй хамтын ажиллагааг эрхэмлэн. <br />
             Үйлчлүүлэгч төвтэй, найзын дотно сэтгэлээр тусламж үйлчилгээг

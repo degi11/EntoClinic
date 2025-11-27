@@ -11,8 +11,8 @@ export const AboutUs = () => {
           "url('https://ento.mn/_next/image?url=%2Fimages%2Fbusiness%2Fclinic.jpg&w=1920&q=75')",
       }}
     >
-      <div className="md:bg-transparent gap-[30px] bg-opacity-50 w-full flex flex-col md:flex-row min-h-[600px] md:min-h-[400px] items-center justify-center border-8 md:border-18 border-solid border-white">
-        <div className="inset-0 bg-white/70 backdrop-blur-sm max-w-[1260px] mx-auto px-1 md:px-4 sm:px-6 py-2 rounded-3xl">
+      <div className="md:bg-transparent gap-[30px] bg-opacity-50 w-full flex flex-col md:flex-row min-h-[600px] md:min-h-[400px] items-center justify-center border-8 md:border-18 border-solid border-white s">
+        <div className="my-6 mx-2 md:mx-auto lg:my-auto inset-0 bg-white/70 backdrop-blur-sm max-w-[1260px] px-1 md:px-4 sm:px-6 py-2 rounded-3xl">
           <h2 className="my-5 text-2xl sm:text-3xl md:text-[38px] font-bold text-[#00AC94] text-center">
             {firstItem.title}
           </h2>

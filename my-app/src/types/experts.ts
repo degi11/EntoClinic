@@ -34,3 +34,4 @@ export interface TitleCenterProps {
 export interface DateProps {
   formattedDate?: string;
 }
+

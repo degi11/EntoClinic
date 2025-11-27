@@ -3,7 +3,7 @@
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
-import image1 from "../asscents/outside building1.jpg";
+import image1 from "../asscents/shinjilgee.jpg";
 import image2 from "../asscents/ulamjlalt or.jpg";
 import image3 from "../asscents/waiting stage.jpg";
 
@@ -19,6 +19,7 @@ export default function AutoCarousel() {
   );
 
   return (
+   
     <div
       className="relative w-full max-w-7xl mx-auto h-80 overflow-hidden rounded-xl mb-20"
       ref={emblaRef} 

@@ -3,15 +3,15 @@ import { DIAGNOSTIC_SERVICES, TITLE_CENTER_INFO } from "@/asscents/constans";
 import { CheckCircle } from "lucide-react";
 import TitleCenter from "./title-center";
 
-export default function Services() {
-  const secondItem = TITLE_CENTER_INFO[1];
+export default function Lab() {
+  const fifthItem = TITLE_CENTER_INFO[5];
   return (
     <section id="services" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-8">
+      <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-8 mt-10">
         {TITLE_CENTER_INFO && (
           <TitleCenter
-            title={secondItem.title}
-            text={secondItem.text}
+            title={fifthItem.title}
+            text={fifthItem.text}
             classnameTitle="text-gray-900"
             classnameText="text-gray-600"
           />

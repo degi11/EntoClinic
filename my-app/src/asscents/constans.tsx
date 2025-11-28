@@ -32,8 +32,6 @@ import {
   Mail,
   Clock,
   Baby,
-  House,
-  Clock2,
   HeartPulse,
   TestTube,
   Radiation,
@@ -45,6 +43,11 @@ import {
   FlaskRound,
   FlaskConical,
   Worm,
+  Users,
+  HandHeart,
+  ShieldCheck,
+  House,
+  ThumbsUp,
 } from "lucide-react";
 
 export const CONTACT_INFO = [
@@ -68,18 +71,37 @@ export const CONTACT_INFO = [
 
 export const RESULT_SM_INFO = [
   {
+    icon: Users,
+    title: "Чанарыг эрхэмлэнэ",
+  },
+  {
+    icon: HandHeart,
+    title: "Өөриймсөг хандлага",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Багийн ажиллагаа",
+  },
+];
+
+export const SM_INFO_DATA = [
+  {
     icon: Baby,
-    title: "Төрсөнөөс 72 цагаас хойш насанд хүртэлх",
+    text: "Хүүхдийг төрсөнөөс 72 цагаас хойш насанд хүртэлх бүх үзлэг, зөвлөгөө, эмчийн хяналтыг хийх боломжтой."
   },
   {
     icon: House,
-    title: "Гэр бүл, Албан байгууллага, Хамт олон",
+    text: "Хувь хүн, гэр бүл, албан байгууллага, хамт олны өвөрмөц хэрэгцээнд тохирсон, урьдчилан сэргийлэх үзлэгийн багц оношилгоо, шинжилгээнд хамруулах боломжтой."
   },
   {
-    icon: Clock2,
-    title: "Хялбар цаг захиалга",
+    icon: ThumbsUp,
+    text: "Өвөрмонголын зүү эмчилгээний нарийн схем бүхий эмчилгээтэй."
   },
-];
+  {
+    icon: Clock,
+    text: "Үзлэгийн цагийг утсаар, онлайнаар, биечлэн авах нөхцөл бүрдсэн ба шинжилгээний хариуг тухай бүрт нь мэйлээр болон аппликейшн ашиглан авах боломжтой."
+  },
+]
 
 export const TITLE_CENTER_INFO = [
   {

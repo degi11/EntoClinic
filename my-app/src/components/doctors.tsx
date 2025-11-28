@@ -2,6 +2,7 @@ import { CONSULTATION_EXPERTS, TITLE_CENTER_INFO } from "@/asscents/constans";
 import { Award } from "lucide-react";
 import Image from "next/image";
 import TitleCenter from "./title-center";
+import image1 from "../asscents/ulamjlalt or.jpg"
 
 export default function Doctors() {
   const thirdItem = TITLE_CENTER_INFO[2];

@@ -2,7 +2,6 @@ import { AboutUs } from "@/components/about-us";
 import ContactUs from "@/components/contact-us";
 import Doctors from "@/components/doctors";
 import Main from "@/components/main";
-import AutoCarousel from "@/components/place-carousel";
 import TestimonialCarousel from "@/components/service-place-carousel";
 import SmContactInfo from "@/components/sm-info";
 
@@ -14,7 +13,6 @@ export default function Home() {
       <AboutUs />
       <TestimonialCarousel />
       <Doctors />
-      <AutoCarousel/>
       <ContactUs />
     </div>
   );

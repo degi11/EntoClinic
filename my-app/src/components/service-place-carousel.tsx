@@ -36,7 +36,7 @@ export default function TestimonialCarousel() {
     };
   }, [embla]);
 
-  const secondItem = TITLE_CENTER_INFO[1];
+  const secondItem = TITLE_CENTER_INFO[0];
 
   return (
     <div className="relative w-full max-w-7xl mx-auto py-20">

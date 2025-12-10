@@ -4,7 +4,7 @@ import { CheckCircle } from "lucide-react";
 import TitleCenter from "./title-center";
 
 export default function Lab() {
-  const fifthItem = TITLE_CENTER_INFO[5];
+  const fifthItem = TITLE_CENTER_INFO[4];
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-2 sm:px-2 lg:px-8 mt-10">

@@ -10,8 +10,8 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Main />
       <SmContactInfo />
-      <AboutUs />
       <TestimonialCarousel />
+      <AboutUs />
       <Doctors />
       <ContactUs />
     </div>

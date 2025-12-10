@@ -53,7 +53,7 @@ export default function ContactUs() {
     setLoading(false);
   };
 
-  const thirdItem = TITLE_CENTER_INFO[3];
+  const thirdItem = TITLE_CENTER_INFO[2];
 
   return (
     <form

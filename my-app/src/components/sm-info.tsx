@@ -1,7 +1,7 @@
 import { SM_INFO_DATA } from "@/asscents/constans";
 import image from "../asscents/shinjilgee.jpg";
 
-export default function SmInfo() {
+export default function AboutUs() {
   return (
     <section
       id="about-us"
@@ -22,7 +22,7 @@ export default function SmInfo() {
               <div className="border-2 border-white flex items-center justify-center w-20 h-20 rounded-full">
                 <el.icon className="w-10 h-10" />
               </div>
-              <p className="max-w-[200px] ">{el.text}</p>
+              <p className="max-w-50 ">{el.text}</p>
             </div>
           ))}
         </div>

@@ -4,14 +4,14 @@ import Image from "next/image";
 import TitleCenter from "./title-center";
 
 export default function Doctors() {
-  const thirdItem = TITLE_CENTER_INFO[1];
+  const secondItem = TITLE_CENTER_INFO[1];
   return (
     <section id="doctors" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {TITLE_CENTER_INFO && (
           <TitleCenter
-            title={thirdItem.title}
-            text={thirdItem.text}
+            title={secondItem.title}
+            text={secondItem.text}
             classnameTitle="text-gray-900"
             classnameText="text-gray-600"
           />

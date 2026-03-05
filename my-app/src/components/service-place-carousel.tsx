@@ -9,14 +9,14 @@ import TitleCenter from "./title-center";
 import { useRouter } from "next/navigation";
 
 export default function TestimonialCarousel() {
-  const router = useRouter();
+  const router = useRouter()
   const [emblaRef, embla] = useEmblaCarousel(
     {
       loop: false,
       align: "center",
       skipSnaps: false,
     },
-    [Autoplay({ delay: 3500, stopOnInteraction: false })]
+    [Autoplay({ delay: 6000, stopOnInteraction: false })],
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -36,14 +36,14 @@ export default function TestimonialCarousel() {
     };
   }, [embla]);
 
-  const secondItem = TITLE_CENTER_INFO[0];
+  const firstItem = TITLE_CENTER_INFO[0];
 
   return (
     <div className="relative w-full max-w-7xl mx-auto py-20">
       {TITLE_CENTER_INFO && (
         <TitleCenter
-          title={secondItem.title}
-          text={secondItem.text}
+          title={firstItem.title}
+          text={firstItem.text}
           classnameTitle="text-gray-900"
           classnameText="text-gray-600"
         />
@@ -52,7 +52,6 @@ export default function TestimonialCarousel() {
         <div className="flex gap-16">
           {SERVICES_CAROUSEL_INFO.map((el, i) => (
             <div
-              onClick={() => router.push(`/${el.href}`)}
               key={i}
               className="
           shrink-0 w-full md:w-[70%] lg:w-[60%] mx-auto h-96
@@ -61,14 +60,9 @@ export default function TestimonialCarousel() {
         "
             >
               <div className="relative w-full h-full rounded-3xl overflow-hidden">
-                <Image
-                  src={el.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                />
+                <Image src={el.image} alt="" fill className="object-cover" />
 
-                <div className="absolute bottom-8 left-6 text-black p-4 bg-white rounded-xl max-w-100">
+                <div className="absolute bottom-6 left-6 text-black p-4 bg-white rounded-xl w-100">
                   <div className="flex items-center gap-2">
                     <el.icon className="text-[#00AC94]" />
                     <p className="text-base md:text-base lg:text-base font-semibold group-hover:text-[#00AC94] transition">
@@ -76,6 +70,12 @@ export default function TestimonialCarousel() {
                     </p>
                   </div>
                   <p className="text-sm md:text-base lg:text-base">{el.text}</p>
+                  <button
+                    onClick={() => router.push(`/${el.href}`)}
+                    className="bg-teal-600 text-white  rounded-lg hover:bg-teal-700 transition-colors px-3 py-1 mt-2 flex justify-self-end"
+                  >
+                    Дэлгэрэнгүй...
+                  </button>
                 </div>
               </div>
             </div>

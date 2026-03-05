@@ -11,8 +11,8 @@ export default function Navbar() {
     <div
       className={`fixed w-full z-50 transition-all duration-300 bg-white/40 backdrop-blur-2xl `}
     >
-      <div className="max-w-[1260px] mx-auto px-6">
-        <div className="flex justify-between h-[90px] items-center py-3">
+      <div className="max-w-315 mx-auto px-6">
+        <div className="flex justify-between h-22.5 items-center py-3">
           <Link href="/">
             <div className="flex items-center justify-center gap-1">
               <Image

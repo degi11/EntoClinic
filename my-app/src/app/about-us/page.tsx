@@ -1,4 +1,4 @@
-import AboutUs from "@/components/sm-info";
+import AboutUs from "@/components/about-us";
 
 export default function LandingPage() {
   return <AboutUs />;

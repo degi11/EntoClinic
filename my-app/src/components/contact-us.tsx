@@ -41,7 +41,14 @@ export default function ContactUs() {
 
       const data = await res.json();
       if (data.success) {
-        window.location.reload();
+        setLastName("");
+        setName("");
+        setPhonenumber("");
+        setDescription("");
+        setTime("");
+        setDate(undefined);
+
+        toast.success("Амжилттай илгээгдлээ!");
       } else {
         toast.error(data.error || "Server error");
       }

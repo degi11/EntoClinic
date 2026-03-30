@@ -1,10 +1,13 @@
+"use client";
 import { CONSULTATION_EXPERTS, TITLE_CENTER_INFO } from "@/asscents/constans";
 import { Award } from "lucide-react";
 import Image from "next/image";
 import TitleCenter from "./title-center";
+import { motion } from "motion/react";
 
 export default function Doctors() {
   const secondItem = TITLE_CENTER_INFO[1];
+
   return (
     <section id="doctors" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,18 +19,28 @@ export default function Doctors() {
             classnameText="text-gray-600"
           />
         )}
+
         <div className="grid md:grid-cols-3 gap-8">
           {CONSULTATION_EXPERTS.map((el, index) => (
-            <div
+            <motion.div
               key={index}
-              className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden cursor-pointer"
             >
-              <div className="relative w-full h-90">
+              <div className="relative w-full h-90 overflow-hidden">
                 <Image
                   src={el.image}
                   alt={el.name}
                   fill
-                  className="object-cover"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 
@@ -36,7 +49,9 @@ export default function Doctors() {
                   {el.name}
                 </h3>
 
-                <p className="text-gray-600 text-sm mb-3">{el.credentials}</p>
+                <p className="text-gray-600 text-sm mb-3">
+                  {el.credentials}
+                </p>
 
                 <div className="mb-2">
                   <div className="flex items-center text-gray-500 text-sm mb-2">
@@ -56,7 +71,7 @@ export default function Doctors() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

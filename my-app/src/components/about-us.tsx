@@ -5,7 +5,7 @@ export default function AboutUs() {
   return (
     <section
       id="about-us"
-      className="relative w-full min-h-100 bg-cover bg-center bg-no-repeat bg-fixed"
+      className="relative w-full min-h-100 bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
       style={{
         backgroundImage: `url(${image.src})`,
       }}

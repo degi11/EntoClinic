@@ -1,23 +1,34 @@
 export const MENU_ITEMS = [
   {
+    title: "Эхлэл",
+    value: "Эхлэл",
+    href: "/",
+  },
+  {
     title: "Бидний тухай",
     value: "Бидний тухай",
-    href: "/#about-us",
+    href: "#about-us",
   },
   {
     title: "Үзлэг, Эмчилгээ",
     value: "Үзлэг, Эмчилгээ",
-    href: "/#service",
+    href: "#service",
+    isDropdown: true,
+    items: [
+      { title: "Уламжилалт", href: "/service/traditional-medicine" },
+      { title: "Lab", href: "/service/lab" },
+      { title: "Хүүхэд", href: "/service/child-medicine" },
+    ],
   },
   {
     title: "Эмч нар",
     value: "Эмч нар",
-    href: "/#doctors",
+    href: "#doctors",
   },
   {
     title: "Холбоо барих",
     value: "Холбоо барих",
-    href: "/#contact-us",
+    href: "#contact-us",
   },
 ];
 
@@ -98,7 +109,6 @@ export const SM_INFO_DATA = [
     text: "Үзлэгийн цагийг утсаар, онлайнаар, биечлэн авах нөхцөл бүрдсэн ба шинжилгээний хариуг тухай бүрт нь мэйлээр болон аппликейшн ашиглан авах боломжтой.",
   },
 ];
-
 
 export const TITLE_CENTER_INFO = [
   {

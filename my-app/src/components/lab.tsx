@@ -2,6 +2,7 @@
 import { DIAGNOSTIC_SERVICES, TITLE_CENTER_INFO } from "@/asscents/constans";
 import { CheckCircle } from "lucide-react";
 import TitleCenter from "./title-center";
+import ContactUs from "./contact-us";
 
 export default function Lab() {
   const fourthItem = TITLE_CENTER_INFO[4];
@@ -17,7 +18,7 @@ export default function Lab() {
           />
         )}
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           {DIAGNOSTIC_SERVICES.map((el, index) => (
             <div
               key={index}
@@ -45,8 +46,9 @@ export default function Lab() {
               </ul>
             </div>
           ))}
-        </div>
+        </div>        
       </div>
+      <ContactUs/>
     </section>
   );
 }

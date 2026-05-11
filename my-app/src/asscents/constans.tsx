@@ -16,7 +16,7 @@ export const MENU_ITEMS = [
     isDropdown: true,
     items: [
       { title: "Уламжилалт", href: "/service/traditional-medicine" },
-      { title: "Lab", href: "/service/lab" },
+      { title: "Лаборатори", href: "/service/lab" },
       { title: "Хүүхэд", href: "/service/child-medicine" },
     ],
   },
@@ -341,22 +341,22 @@ export const SERVICES_CAROUSEL_INFO = [
     href: "service/lab",
     icon: FlaskConical,
     image: image1,
-    title: "Lab",
-    text: "Манай клиникийг зориорой",
+    title: "Лаборатори",
+    text: "Нарийн оношилгоо, чанартай үйлчилгээ",
   },
   {
     href: "service/traditional-medicine",
     icon: Cross,
     image: image2,
-    title: "Ulamjlalt",
-    text: "Тэргүүлэх зэргийн эмч, клиникийн профессор",
+    title: "Уламжлалт",
+    text: "Уламжлалт нарийн эмчилгээ",
   },
   {
     href: "service/child-medicine",
     icon: Baby,
     image: image3,
-    title: "Huuhed",
-    text: "Тэргүүлэх зэргийн эмч, клиникийн профессор",
+    title: "Хүүхэд",
+    text: "Хүүхэд бүрт энэрэл, халамж",
   },
 ];
 

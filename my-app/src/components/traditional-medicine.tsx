@@ -3,6 +3,7 @@ import { TITLE_CENTER_INFO, TRADITIONAL_INFO } from "@/asscents/constans";
 import TitleCenter from "./title-center";
 import Image from "next/image";
 import { motion } from "motion/react";
+import ContactUs from "./contact-us";
 
 export default function TraditionalMedicine() {
   const fifthItem = TITLE_CENTER_INFO[5];
@@ -73,7 +74,9 @@ export default function TraditionalMedicine() {
             );
           })}
         </div>
+        
       </div>
+      <ContactUs/>
     </section>
   );
 }

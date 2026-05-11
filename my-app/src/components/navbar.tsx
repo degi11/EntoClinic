@@ -13,12 +13,10 @@ export default function Navbar() {
 
   const handleScroll = (id: string) => {
     if (pathname !== "/") {
-      // 😏 өөр page дээр байвал → home руу явна
       router.push(`/#${id}`);
       return;
     }
 
-    // 😎 home дээр байвал → smooth scroll
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
